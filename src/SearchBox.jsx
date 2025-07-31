@@ -3,10 +3,11 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useState } from "react";
+require('dotenv').config;
 export default function SearchBox({updateInfo}){
     // const API_URL ="https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
     const API_URL ="https://api.openweathermap.org/data/2.5/weather";
-    const API_KEY="e78de7d7e2a59cc98a4c4d5ecf44bb33";
+    const API_KEY= process.env.APIKEY;
     let[city,setCity]=useState("Delhi");
     let[err,setErr]=useState(false);
 
