@@ -39,7 +39,7 @@ export default function SearchBox({ updateInfo }) {
     }
   };
 
-  // Load default weather for Delhi on first render
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -55,12 +55,12 @@ export default function SearchBox({ updateInfo }) {
     fetchData();
   }, []);
 
-  // Handle input change
+  
   const handlechange = (e) => {
     setCity(e.target.value);
   };
 
-  // Handle form submission
+ 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -73,7 +73,7 @@ export default function SearchBox({ updateInfo }) {
     }
   };
 
-  // Display alert on error
+  
   useEffect(() => {
     if (err) {
       alert("City not found here!");
@@ -82,10 +82,24 @@ export default function SearchBox({ updateInfo }) {
     }
   }, [err]);
 
+
+
+      const iconStyle = {
+        fontSize: '3rem',
+        '@media (min-width:1440px)': {
+          fontSize: '5rem',
+        },
+        '@media (min-width:2560px)': {
+          fontSize: '7rem',
+        },
+      };
+      
+      
+      
   return (
     <div className="SearchBox">
       <form onSubmit={handleSubmit}>
-        {/* Text Field */}
+       
         <TextField
           id="city"
           label="City Name"
@@ -124,21 +138,13 @@ export default function SearchBox({ updateInfo }) {
 
         <br /><br />
 
-        {/* Search Button */}
+        
         <Button
           variant="contained"
           type="submit"
           endIcon={
             <SearchIcon
-              sx={{
-                fontSize: '1.2rem',
-                '@media (min-width:1440px)': {
-                  fontSize: '2rem',
-                },
-                '@media (min-width:2560px)': {
-                  fontSize: '3.5rem',
-                },
-              }}
+             sx= {iconStyle}
             />
           }
           sx={{

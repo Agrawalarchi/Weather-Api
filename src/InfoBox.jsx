@@ -9,17 +9,30 @@ import "./InfoBox.css";
 export default function InfoBox({info}){
 
 
- let setIcon = "";
-  if (info.Humidity > 80) {
-    setIcon=<ThunderstormIcon/>;
-  }else if (info.Humidity > 70 ) {
-   setIcon= <CloudIcon/>
-  }else if (info.Temp > 25) {
-    setIcon = <SunnyIcon/>;
-  } else {
-    setIcon =<AcUnitIcon/>;
-  }
- 
+  let setIcon = ""; 
+
+
+  const iconStyle = {
+  fontSize: '3rem',
+  '@media (min-width:1440px)': {
+    fontSize: '3.5rem',
+  },
+  '@media (min-width:2560px)': {
+    fontSize: '7rem',
+  },
+  verticalAlign: 'middle',
+  marginLeft: '0.5rem',
+};
+
+if (info.Humidity > 80) {
+  setIcon = <ThunderstormIcon sx={iconStyle} />;
+} else if (info.Humidity > 70) {
+  setIcon = <CloudIcon sx={iconStyle} />;
+} else if (info.Temp > 25) {
+  setIcon = <SunnyIcon sx={iconStyle} />;
+} else {
+  setIcon = <AcUnitIcon sx={iconStyle} />;
+}
 
   
     return(

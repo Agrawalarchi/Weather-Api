@@ -1,12 +1,12 @@
-.WeatherApp{
-    text-align:"center";
-     display:"flex";
-     flex-direction:"column";
-     justify-content:"center";
-     align-items:"center";
-}
+    .WeatherApp{
+        text-align:"center";
+        display:"flex";
+        flex-direction:"column";
+        justify-content:"center";
+        align-items:"center";
+    }
 
-.heading{
-    color:"#3a3f87" ;
-    font-size:"3rem";
-}
+    .heading{
+        color:"#3a3f87" ;
+        font-size:"3rem";
+    }
