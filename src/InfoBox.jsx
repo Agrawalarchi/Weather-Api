@@ -24,7 +24,7 @@ export default function InfoBox({info}){
   
     return(
         <div className="InfoBox">
-            <h2 style={{color:" #2d3169ff", fontSize:"2.5rem"}}>{info.City} {setIcon}</h2>
+            <h2 className="city-name">{info.City} {setIcon}</h2>
               <h2>   {info.Temp}&deg;C </h2>
                  <p>Humidity : {info.Humidity}</p>
                  <p>Min Temp : {info.TempMin}&deg;C</p>

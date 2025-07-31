@@ -1,6 +1,6 @@
 .WeatherFrontPage {
   text-align: center;
-  height: 70vh;
+  height: 75vh;
   width: 17rem;
   border: 1px solid white;
   border-radius: 14px;
@@ -18,8 +18,8 @@
 }
 
 .img {
-  margin-top: 1rem;
-  height: 30vh;
+ 
+  height: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,15 +36,16 @@
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #3a3f87;
 }
 
 button {
-  width: 9rem;
+  width: 11rem;
   border-radius: 26px;
   background-color: rgb(91, 98, 226);
+  text-align: center;
   border: none;
   color: white;
   padding: 0.6rem 0;
@@ -57,4 +58,72 @@ button:hover,
 button:focus {
   background-color: rgb(70, 75, 170);
   outline: none;
+}
+@media (min-width:1024px){
+  .WeatherFrontPage{
+    height: 76vh;
+    width: 23rem;
+  }
+
+  .img {
+   height: 38vh;
+ }
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+h2{
+  font-size: 3.5rem;
+}
+
+button{
+ 
+  width: 15rem;
+  font-size: 1.4rem;
+}
+}
+
+
+
+@media (min-width:1440px){
+  .WeatherFrontPage{
+    width: 30rem;
+    height: 73vh;
+  }
+
+  .img {
+   height: 39vh;
+ }
+
+h2{
+  font-size: 4.5rem;
+}
+
+button{
+ 
+  width: 20rem;
+  font-size: 2rem;
+}
+}
+
+
+
+@media (min-width:2560px){
+  .WeatherFrontPage{
+    width: 55rem;
+    border-radius: 39px;
+    border: 2px solid white;
+    height: 73vh;
+  }
+
+h2{
+  font-size: 8.3rem;
+}
+
+button{
+ font-weight: 500;
+  width: 34rem;
+  font-size: 4.3rem;
+}
 }

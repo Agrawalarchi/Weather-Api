@@ -1,6 +1,6 @@
 .WeatherBackPage{
     text-align: center;
-  height: 82vh;
+  height: 85vh;
   width: 19rem;
   border: 1px solid white;
   border-radius: 14px;
@@ -14,4 +14,37 @@
   flex-direction: column;
   align-items: center;
 
+}
+
+
+
+@media (min-width:1024px){
+  .WeatherBackPage{
+    height: 86vh;
+    font-size: 1.4rem;
+    width: 23.5rem;
+  }
+}
+
+
+
+@media (min-width:1440px){
+  .WeatherBackPage{
+    height: 86.5vh;
+    font-size: 2rem;
+    width: 32rem;
+    border-radius: 18px;
+  }
+}
+
+
+
+@media (min-width:2560px){
+  .WeatherBackPage{
+    height: 89vh;
+    border: 2px solid white;
+    font-size: 4rem;
+    width: 58rem;
+    border-radius: 34px;
+  }
 }

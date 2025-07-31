@@ -1,113 +1,176 @@
-import "./SearchBox.css"
+import "./SearchBox.css";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useState } from "react";
-export default function SearchBox({updateInfo}){
-    // const API_URL ="https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
-    const API_URL ="https://api.openweathermap.org/data/2.5/weather";
-    const API_KEY="e78de7d7e2a59cc98a4c4d5ecf44bb33";
-    let[city,setCity]=useState("Delhi");
-    let[err,setErr]=useState(false);
 
+export default function SearchBox({ updateInfo }) {
+  const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+  const API_KEY = "e78de7d7e2a59cc98a4c4d5ecf44bb33";
 
-let getWeather=async(city)=>{
-     const URL =`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`
+  let [city, setCity] = useState("Delhi");
+  let [err, setErr] = useState(false);
 
-       try{
-         let response=await fetch(URL);
-        let jsonResponse=await response.json();
-        console.log(jsonResponse);
+   
+  const getWeather = async (city) => {
+    const URL = `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`;
 
-        let result={
-            City:city,
-            Temp:jsonResponse.main.temp,
-            TempMin:jsonResponse.main.temp_min,
-            TempMax:jsonResponse.main.temp_max,
-            Humidity:jsonResponse.main.humidity,
-            FeelsLike:jsonResponse.main.feels_like,
-            Weather:jsonResponse.weather[0].description
-        }
-        console.log(result);
-        return result;
-       }
-       catch(err){
-        throw err;
-       }
-}
+    try {
+      let response = await fetch(URL);
+      let jsonResponse = await response.json();
 
+      if (jsonResponse.cod !== 200) {
+        throw new Error("City not found");
+      }
 
+      let result = {
+        City: city,
+        Temp: jsonResponse.main.temp,
+        TempMin: jsonResponse.main.temp_min,
+        TempMax: jsonResponse.main.temp_max,
+        Humidity: jsonResponse.main.humidity,
+        FeelsLike: jsonResponse.main.feels_like,
+        Weather: jsonResponse.weather[0].description
+      };
 
-
-
-useEffect(() => {
-    const fetchData = async () => {
-        try {
-            const defaultInfo = await getWeather("Delhi");
-            updateInfo(defaultInfo);
-            setCity("");
-            setErr(false);
-        } catch (err) {
-            setErr(true);
-        }
-    };
-
-    fetchData(); 
-}, []);
-
-
-
-let handlechange=(eve)=>{
-setCity(eve.target.value);
-}
-
-let handleSubmit=async(event)=>{
-event.preventDefault();
-try {
-        console.log(city);
-        let info = await getWeather(city);  
-        updateInfo(info);
-        setCity("");                   
-        setErr(false);                
-    } 
-    catch (err) {
-        setErr(true);                 
+      return result;
+    } catch (err) {
+      throw err;
     }
-}
- useEffect(() => {
-      if (err) {
-        alert("City not found here!");
+  };
+
+  // Load default weather for Delhi on first render
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const defaultInfo = await getWeather("Delhi");
+        updateInfo(defaultInfo);
         setCity("");
         setErr(false);
+      } catch (err) {
+        setErr(true);
       }
-    }, [err]);
-    
-    
-    return(
-        <div className="SearchBox">
+    };
 
-          <form  onSubmit={handleSubmit}>
+    fetchData();
+  }, []);
 
-            <TextField id="city" label="City Name"  variant="outlined" required  value={city} onChange={handlechange}  
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                borderRadius: '9px',
+  // Handle input change
+  const handlechange = (e) => {
+    setCity(e.target.value);
+  };
+
+  // Handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      let info = await getWeather(city);
+      updateInfo(info);
+      setCity("");
+      setErr(false);
+    } catch (err) {
+      setErr(true);
+    }
+  };
+
+  // Display alert on error
+  useEffect(() => {
+    if (err) {
+      alert("City not found here!");
+      setCity("");
+      setErr(false);
+    }
+  }, [err]);
+
+  return (
+    <div className="SearchBox">
+      <form onSubmit={handleSubmit}>
+        {/* Text Field */}
+        <TextField
+          id="city"
+          label="City Name"
+          variant="outlined"
+          required
+          value={city}
+          onChange={handlechange}
+          sx={{
+            width: '250px',
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '9px',
+            },
+            '& .MuiInputBase-input': {
+              fontSize: '1rem',
+              '@media (min-width:1024px)': {
+                fontSize: '1.5rem',
               },
-            }} />
-                    
-            <br/><br/> 
+              '@media (min-width:1440px)': {
+                fontSize: '2rem',
+              },
+              '@media (min-width:2560px)': {
+                fontSize: '3rem',
+              },
+            },
+            '@media (min-width:1024px)': {
+              width: '20rem',
+            },
+            '@media (min-width:1440px)': {
+              width: '28rem',
+            },
+            '@media (min-width:2560px)': {
+              width: '48rem',
+            },
+          }}
+        />
 
+        <br /><br />
 
-              <Button variant="contained" endIcon={<SearchIcon/>}type="submit"  sx={{
-                  backgroundColor: 'rgba(58, 63, 156, 1)',
-                  '&:hover': {
-                    backgroundColor: 'rgba(64, 68, 144, 1)',
-                  },
-                }}>
-                     Search 
-              </Button>
-           
-          </form>
-        </div>
-    )
+        {/* Search Button */}
+        <Button
+          variant="contained"
+          type="submit"
+          endIcon={
+            <SearchIcon
+              sx={{
+                fontSize: '1.2rem',
+                '@media (min-width:1440px)': {
+                  fontSize: '2rem',
+                },
+                '@media (min-width:2560px)': {
+                  fontSize: '3.5rem',
+                },
+              }}
+            />
+          }
+          sx={{
+            backgroundColor: 'rgba(58, 63, 156, 1)',
+            fontSize: '1rem',
+            height: '3rem',
+            width: '12rem',
+            borderRadius: '10px',
+            '@media (min-width:1024px)': {
+              fontSize: '1.2rem',
+              width: '15rem',
+              height: '3.3rem',
+            },
+            '@media (min-width:1440px)': {
+              fontSize: '1.6rem',
+              width: '19rem',
+              height: '4.3rem',
+            },
+            '@media (min-width:2560px)': {
+              fontSize: '3rem',
+              width: '40rem',
+              height: '7rem',
+              marginBottom: '2rem',
+            },
+            '&:hover': {
+              backgroundColor: 'rgba(64, 68, 144, 1)',
+            },
+          }}
+        >
+          Search
+        </Button>
+      </form>
+    </div>
+  );
 }
