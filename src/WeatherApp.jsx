@@ -7,7 +7,7 @@ export default function WeatherApp() {
   const [showFront, setShowFront] = useState(true);
 
   return (
-    <div className="weatherApp" style={{textAlign:"center", display:"flex", flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+    <div className="WeatherApp" >
       <h2  className="heading" >Weather Widget</h2>
       {showFront ? (
         <WeatherFrontPage onStart={() => setShowFront(false)} />

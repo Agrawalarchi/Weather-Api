@@ -61,8 +61,8 @@ button:focus {
 }
 @media (min-width:1024px){
   .WeatherFrontPage{
-    height: 76vh;
-    width: 26rem;
+    height: 83vh;
+    width: 24rem;
   }
 
   .img {
@@ -74,13 +74,13 @@ button:focus {
   height: 100%;
 }
 h2{
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 button{
  
   width: 16rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 }
 
@@ -88,7 +88,7 @@ button{
 
 @media (min-width:1440px ) and ( max-width:2559px){
   .WeatherFrontPage{
-    width: 30rem;
+    width: 27rem;
     height: 82vh;
     border-radius: 20px
   }
@@ -98,13 +98,13 @@ button{
  }
 
 h2{
-  font-size: 4.5rem;
+  font-size: 3.5rem;
 }
 
 button{
  
-  width: 20rem;
-  font-size: 2rem;
+  width: 18rem;
+  font-size: 1.7rem;
 }
 }
 
@@ -112,20 +112,20 @@ button{
 
 @media (min-width:2560px){
   .WeatherFrontPage{
-    width: 57rem;
+    width: 52rem;
     border-radius: 39px;
     border: 2px solid white;
-    height: 76vh;
+    height: 80vh;
   }
 
 h2{
-  font-size: 8.3rem;
+  font-size: 5.5rem;
 }
 
 button{
- 
-  width: 40rem;
+  font-weight: 500;
+  width: 30rem;
   border-radius: 45px;
-  font-size: 4.3rem;
+  font-size: 3.7rem;
 }
 }

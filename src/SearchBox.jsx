@@ -103,14 +103,14 @@ export default function SearchBox({ updateInfo }) {
             '& .MuiInputBase-input': {
               fontSize: '1rem',
               '@media (min-width:1024px)': {
-                fontSize: '1.5rem',
+                fontSize: '0.8rem',
               },
               '@media (min-width:1440px ) and ( max-width:2559px)': {
                 
                 fontSize: '2rem',
               },
               '@media (min-width:2560px)': {
-                fontSize: '3rem',
+                fontSize: '2.3rem',
               },
             },
             '@media (min-width:1024px)': {
@@ -120,7 +120,7 @@ export default function SearchBox({ updateInfo }) {
               width: '28rem',
             },
             '@media (min-width:2560px)': {
-              width: '48rem',
+              width: '40rem',
             },
           }}
         />
@@ -139,9 +139,9 @@ export default function SearchBox({ updateInfo }) {
             width: '12rem',
             borderRadius: '10px',
             '@media (min-width:1024px)': {
-              fontSize: '1.2rem',
-              width: '15rem',
-              height: '3.3rem',
+              fontSize: '0,8rem',
+              width: '13rem',
+              height: '3rem',
             },
             '@media (min-width:1440px ) and ( max-width:2559px)': {
               fontSize: '2rem',
@@ -149,10 +149,10 @@ export default function SearchBox({ updateInfo }) {
               height: '4.3rem',
             },
             '@media (min-width:2560px)': {
-              fontSize: '3rem',
-              width: '37rem',
+              fontSize: '2.3rem',
+              width: '30rem',
               height: '7rem',
-              marginBottom: '2rem',
+              marginBottom: '1.2rem',
               borderRadius:'24px',
             },
             '&:hover': {
