@@ -1,7 +1,6 @@
 import "./SearchBox.css";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useState } from "react";
 
 export default function SearchBox({ updateInfo }) {
@@ -84,17 +83,6 @@ export default function SearchBox({ updateInfo }) {
 
 
 
-      const iconStyle = {
-        fontSize: '3rem',
-        '@media (min-width:1440px)': {
-          fontSize: '5rem',
-        },
-        '@media (min-width:2560px)': {
-          fontSize: '7rem',
-        },
-      };
-      
-      
       
   return (
     <div className="SearchBox">
@@ -117,7 +105,8 @@ export default function SearchBox({ updateInfo }) {
               '@media (min-width:1024px)': {
                 fontSize: '1.5rem',
               },
-              '@media (min-width:1440px)': {
+              '@media (min-width:1440px ) and ( max-width:2559px)': {
+                
                 fontSize: '2rem',
               },
               '@media (min-width:2560px)': {
@@ -127,7 +116,7 @@ export default function SearchBox({ updateInfo }) {
             '@media (min-width:1024px)': {
               width: '20rem',
             },
-            '@media (min-width:1440px)': {
+            '@media (min-width:1440px ) and ( max-width:2559px)': {
               width: '28rem',
             },
             '@media (min-width:2560px)': {
@@ -142,11 +131,7 @@ export default function SearchBox({ updateInfo }) {
         <Button
           variant="contained"
           type="submit"
-          endIcon={
-            <SearchIcon
-             sx= {iconStyle}
-            />
-          }
+          
           sx={{
             backgroundColor: 'rgba(58, 63, 156, 1)',
             fontSize: '1rem',
@@ -158,16 +143,17 @@ export default function SearchBox({ updateInfo }) {
               width: '15rem',
               height: '3.3rem',
             },
-            '@media (min-width:1440px)': {
-              fontSize: '1.6rem',
-              width: '19rem',
+            '@media (min-width:1440px ) and ( max-width:2559px)': {
+              fontSize: '2rem',
+              width: '21rem',
               height: '4.3rem',
             },
             '@media (min-width:2560px)': {
               fontSize: '3rem',
-              width: '40rem',
+              width: '37rem',
               height: '7rem',
               marginBottom: '2rem',
+              borderRadius:'24px',
             },
             '&:hover': {
               backgroundColor: 'rgba(64, 68, 144, 1)',

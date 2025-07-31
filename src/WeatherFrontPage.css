@@ -1,7 +1,7 @@
 .WeatherFrontPage {
   text-align: center;
   height: 75vh;
-  width: 17rem;
+  width: 18rem;
   border: 1px solid white;
   border-radius: 14px;
   background: linear-gradient(
@@ -62,7 +62,7 @@ button:focus {
 @media (min-width:1024px){
   .WeatherFrontPage{
     height: 76vh;
-    width: 23rem;
+    width: 26rem;
   }
 
   .img {
@@ -79,17 +79,18 @@ h2{
 
 button{
  
-  width: 15rem;
+  width: 16rem;
   font-size: 1.4rem;
 }
 }
 
 
 
-@media (min-width:1440px){
+@media (min-width:1440px ) and ( max-width:2559px){
   .WeatherFrontPage{
     width: 30rem;
-    height: 73vh;
+    height: 82vh;
+    border-radius: 20px
   }
 
   .img {
@@ -111,10 +112,10 @@ button{
 
 @media (min-width:2560px){
   .WeatherFrontPage{
-    width: 55rem;
+    width: 57rem;
     border-radius: 39px;
     border: 2px solid white;
-    height: 73vh;
+    height: 76vh;
   }
 
 h2{
@@ -122,8 +123,9 @@ h2{
 }
 
 button{
- font-weight: 500;
-  width: 34rem;
+ 
+  width: 40rem;
+  border-radius: 45px;
   font-size: 4.3rem;
 }
 }

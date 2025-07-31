@@ -6,9 +6,9 @@
   border-radius: 14px;
   background: linear-gradient(
     135deg,
-    rgba(114, 118, 190, 0.25) 0%,
-    rgba(103, 105, 131, 0.2) 50%,
-    rgba(255, 255, 255, 0.3) 100%
+    rgba(130, 133, 209, 0.25) 0%,
+    rgba(179, 182, 218, 0.2) 50%,
+    rgba(200, 180, 180, 0.3) 100%
   );
   display: flex;
   flex-direction: column;
@@ -22,17 +22,17 @@
   .WeatherBackPage{
     height: 86vh;
     font-size: 1.4rem;
-    width: 23.5rem;
+    width: 26.5rem;
   }
 }
 
 
 
-@media (min-width:1440px){
+@media (min-width:1440px ) and ( max-width:2559px){
   .WeatherBackPage{
     height: 86.5vh;
-    font-size: 2rem;
-    width: 32rem;
+    font-size: 1.6rem;
+    width: 33rem;
     border-radius: 18px;
   }
 }
@@ -44,7 +44,7 @@
     height: 89vh;
     border: 2px solid white;
     font-size: 4rem;
-    width: 58rem;
+    width: 61rem;
     border-radius: 34px;
   }
 }
