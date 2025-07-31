@@ -1,0 +1,17 @@
+.WeatherBackPage{
+    text-align: center;
+  height: 82vh;
+  width: 19rem;
+  border: 1px solid white;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(114, 118, 190, 0.25) 0%,
+    rgba(103, 105, 131, 0.2) 50%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}

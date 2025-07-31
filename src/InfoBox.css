@@ -1,0 +1,15 @@
+.InfoBox {
+    margin-top: 1rem;
+    height: 58vh;
+    width: 17.5rem;
+    text-align: center;
+   background:
+  radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 55%),
+  radial-gradient(circle at 75% 25%, rgba(110, 115, 240, 0.35) 0%, transparent 50%),
+  linear-gradient(135deg, #6469c5 5%, #888eff 95%);
+    border-radius: 14px;
+}   
+p{
+    color: #35374e;
+    
+}
